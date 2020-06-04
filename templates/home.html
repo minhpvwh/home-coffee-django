@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container video-list">
+        <h1 class="mb-4">Danh sách bài học</h1>
+        {% for i in object_list %}
+            <div class="media mb-3">
+                <a href=""><img src="{{ i.image.url }}" class="mr-3" width="128"></a>
+                <div class="media-body">
+                    <h5 class="mt-0"><a href="">Media heading</a></h5>
+                    <ul>
+                        <li>Author: <a href="">{{ i.author }}</a></li>
+                        <li>Number Lesson: {{ i.num_lesson }} lesson</li>
+                    </ul>
+                    {% lorem 1 p random %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
